@@ -1,19 +1,20 @@
-import java.util.ArrayList;
+import java.util.*;
+import java.lang.*;
 
 public class Main {
+
     public static void main(String[] args) {
         System.out.println("Hello world!");
-        ArrayList mul3 = new ArrayList();
-        String list;
-        for(int i =0;i<100;i++){
-            if(i%3==0){
-                mul3.add(i);
-            }
-        }
-        System.out.println("Liste des multiples de 3 : " + mul3);
 
-        list = mul3.toString();
-        System.out.println("Liste des multiples de 3 : " + list);
+        Collection C1 = new ArrayList();
+        Collection C2 = new LinkedList();
+        Collection C3 = new TreeSet();
+        Collection C4 = new HashSet();
+
+        collectionTest.testCollection(C1);
+        collectionTest.testCollection(C2);
+        collectionTest.testCollection(C3);
+        collectionTest.testCollection(C4);
     }
 }
 
