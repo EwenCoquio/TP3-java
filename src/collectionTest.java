@@ -2,8 +2,11 @@ import java.util.*;
 import java.lang.*;
 
 public class collectionTest {
-    public static void testCollection(Collection C) {
-        System.out.println("Collection : " + C.getClass());
+
+
+
+    public static Mesure testCollection(Collection C) {
+        Mesure testmes = new Mesure();
         long start = System.currentTimeMillis();
         long startMemory = Runtime.getRuntime().totalMemory();
         for (int i = 0; i < 999999; i++) {
@@ -13,11 +16,11 @@ public class collectionTest {
             }
         }
         long mid = System.currentTimeMillis();
-        long timeInter = mid - start;
-        long midMemory = Runtime.getRuntime().totalMemory();
-        long interMemory = startMemory - midMemory;
-        System.out.println("temps ajout = " + timeInter);
-        System.out.println("memoire utilisee pour l'ajout = " + interMemory);
+        testmes.setTemps_ajout(mid - start);
+        long midMemory = Runtime.getRuntime().freeMemory();
+        testmes.setMemoire_ajout(startMemory - midMemory);
+        int val = (int) C.toArray()[99];
+        testmes.setVal100(val);
         Iterator test = C.iterator();
         while(test.hasNext()){
             test.next();
@@ -26,10 +29,8 @@ public class collectionTest {
         }
         long end = System.currentTimeMillis();
         long endMemory = Runtime.getRuntime().freeMemory();
-        long time = end-start;
-        long memory = startMemory - endMemory;
-        System.out.println("temps totale = " + time);
-        System.out.println("memoire utilisee = " + memory);
-        System.out.println("---------------------");
+        testmes.setTemps_total(end-start);
+        testmes.setMemoire_totale(startMemory - endMemory);
+        return testmes;
     }
 }
