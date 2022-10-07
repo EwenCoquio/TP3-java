@@ -11,11 +11,19 @@ public class Main {
         Collection C3 = new TreeSet();
         Collection C4 = new HashSet();
 
-        collectionTest.testCollection(C1);
-        collectionTest.testCollection(C2);
-        collectionTest.testCollection(C3);
-        collectionTest.testCollection(C4);
+        System.out.println(collectionTest.testCollection(C1).toString(C1));
+        //collectionTest.testCollection(C2);
+        //collectionTest.testCollection(C3);
+        //collectionTest.testCollection(C4);
+
+
+        /*for (int i = 0; i < 9999; i++) {
+            if (i % 3 == 0) {
+                C1.add(i);
+
+            }
+        }
+        System.out.println("Liste des multiples de 3 : " + C1.toString());*/
+
     }
 }
-
-
